@@ -4,5 +4,6 @@ const app = express();
 //settings
 app.set("port",3000 || process.env.PORT);
 //middlewares
+app.use(express.json());
 app.use("/api/pharmacy", routerMedicines)
 export default app;

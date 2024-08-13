@@ -8,3 +8,12 @@ export const getAll = async (req, res) => {
         res.json({message:err})
     });
 }
+export const insertMedicine = async (req, res)=>{
+    await medicinesDAO.insertMedicine(req.body)
+    .then((medicine) => {
+        res.json(medicine);
+    })
+    .catch((err) => {
+        res.json({message:err})
+    });
+}
