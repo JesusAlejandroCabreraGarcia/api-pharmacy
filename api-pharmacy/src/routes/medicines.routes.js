@@ -1,6 +1,9 @@
 import { Router } from "express";
-import { getAll, insertMedicine } from "../controllers/medicines.controllers.js";
+import { getAll, insertMedicine,getOne,deleteOne,updateOne } from "../controllers/medicines.controllers.js";
 const routerMedicines = Router();
 routerMedicines.get("/getAll", getAll);
 routerMedicines.post("/insertMedicine", insertMedicine);
+routerMedicines.get("/getOne/:barcode", getOne);
+routerMedicines.delete("/deleteOne/:barcode", deleteOne);
+routerMedicines.put("/updateOne/:barcode", updateOne);
 export default routerMedicines;
